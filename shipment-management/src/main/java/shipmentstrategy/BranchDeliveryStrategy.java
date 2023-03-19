@@ -15,6 +15,7 @@ public class BranchDeliveryStrategy implements ShipmentDelivery {
     private final long WEIGHT_LIMIT = 100;
     @Override
     public ShipmentDeliveryResponse deliver(ShipmentDeliveryRequest request) {
+        ShipmentDeliveryResponse response = new ShipmentDeliveryResponse();
         List<Shipment> shipments = request.getShipments();
         Predicate<Shipment> isPackage = shipment -> ShipmentType.PACKAGE.equals(shipment.getType());
         Predicate<Shipment> isUnderWeightLimit = shipment -> shipment.getWeight() <= WEIGHT_LIMIT;
@@ -25,7 +26,8 @@ public class BranchDeliveryStrategy implements ShipmentDelivery {
                 .filter(isUnderWeightLimit)
                 .forEach(shipment -> shipment.setState(State.LOADED));
 
-        return new ShipmentDeliveryResponse(shipments);
+        response.setShipments(shipments);
+        return response;
     }
 
 }
