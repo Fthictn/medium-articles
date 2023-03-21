@@ -4,11 +4,11 @@
   Senaryo taslağı: Görevli paketleri teslim etmek istedi
     Diyelim ki görevlinin elinde belli teslimatlar var
 
-      | state       | barcode | delivery_point      | type    |
-      | CREATED     | B0101   | BRANCH              | BAG     |
-      | UNLOADED    | B0102   | DISTRIBUTION_CENTER | PACKAGE |
-      | CREATED     | B0201   | TRANSFER_CENTER     | BAG     |
-      | CREATED     | B0202   | TRANSFER_CENTER     | PACKAGE |
+      | state       | barcode | delivery_point        | type      |
+      | CREATED     | B0101   | CARGO_CENTER          | BOX       |
+      | UNLOADED    | B0102   | DEALERSHIP_CENTER     | CONTAINER |
+      | CREATED     | B0201   | DISPENSING_CENTER     | BOX       |
+      | CREATED     | B0202   | DISPENSING_CENTER     | CONTAINER |
 
     Ve görevlinin elinde <beginning_state> durumunda ve <barcode> barkod numarasında paketler olduğu biliniyor
 
