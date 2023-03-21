@@ -2,16 +2,20 @@ package main;
 
 import model.constant.contract.ShipmentDeliveryRequest;
 import model.constant.contract.ShipmentDeliveryResponse;
+import model.entity.Shipment;
 import service.ShipmentManagementService;
-import shipmentstrategy.DistributionCenterDeliveryStrategy;
-import shipmentstrategy.base.ShipmentDeliveryStrategy;
+
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        ShipmentManagementService service = new ShipmentManagementService();
+        List<Shipment> shipments = createShipmentList();
+        ShipmentDeliveryResponse deliveryResult = service.deliver(new ShipmentDeliveryRequest(shipments));
+    }
 
-        ShipmentDeliveryStrategy strategy = new ShipmentDeliveryStrategy(new DistributionCenterDeliveryStrategy());
-        ShipmentManagementService service = new ShipmentManagementService(strategy);
-        ShipmentDeliveryResponse deliveryResult = service.deliver(new ShipmentDeliveryRequest());
-
+    private static List<Shipment> createShipmentList(){
+        //some shipments
+        return null;
     }
 }

@@ -11,11 +11,7 @@ public class Shipment {
     private String barcode;
     private Long weight;
     private DeliveryPoint deliveryPoint;
-
     private ShipmentType type;
-
-    private List<Package> packages;
-
 
     public State getState() {
         return state;
@@ -57,11 +53,4 @@ public class Shipment {
         this.type = type;
     }
 
-    public List<Package> getPackages() {
-        return packages;
-    }
-
-    public void setPackages(List<Package> packages) {
-        this.packages = packages;
-    }
 }

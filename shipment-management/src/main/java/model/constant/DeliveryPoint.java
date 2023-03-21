@@ -1,5 +1,5 @@
 package model.constant;
 
 public enum DeliveryPoint {
-    BRANCH,DISTRIBUTION_CENTER,TRANSFER_CENTER
+    CARGO_CENTER,DEALERSHIP_CENTER,DISPENSING_CENTER
 }
